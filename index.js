@@ -13,6 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/api', apiRouter)
 
-app.listen(3002, () => {
+app.listen(3000, () => {
   console.log('Servidor arrancado!')
 })

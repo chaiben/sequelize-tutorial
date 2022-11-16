@@ -12,4 +12,18 @@ router.post('/', async (req, res) => {
   res.json(film)
 })
 
+router.put('/:filmId', async(req, res) => {
+  await Film.update(req.body, {
+    where: { id: req.params.filmId }
+  })
+  res.json({ success: 'Se ha modificado' })
+})
+
+router.delete('/:filmId', async (req, res) => {
+  await Film.destroy({
+    where: { id: req.params.filmId }
+  })
+  res.json({ success: 'Se ha borrado la pelicula' })
+})
+
 module.exports = router
